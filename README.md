@@ -2,9 +2,15 @@
 
  PersianDatePicker written in Swift
 
+### Requirements
+
+   - iOS 9.0+ 
+   - Xcode 8.1+
+   - Swift 3.0+
 
 
 <img src="https://raw.githubusercontent.com/farhad1985/PersianDatePicker/master/ScreenShot/Simulator%20Screen%20Shot%20May%208%2C%202017%2C%201.29.54%20PM.jpg"  height="242" width="442" />
+
 
 
 ### StoryBoard
