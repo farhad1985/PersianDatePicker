@@ -12,5 +12,4 @@ import Foundation
     
     @objc optional func persianDate(persianDatePickerView: PersianDatePickerView, year: Int, monthName: String, day: Int)
     @objc optional func persianDate(persianDatePickerView: PersianDatePickerView, year: Int, month: Int, day: Int)
-
 }
