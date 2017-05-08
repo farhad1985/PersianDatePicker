@@ -13,7 +13,7 @@
 		C47309021EC05953004E9191 /* Cal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47308FE1EC05953004E9191 /* Cal.swift */; };
 		C47309031EC05953004E9191 /* PersianDatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47308FF1EC05953004E9191 /* PersianDatePresenter.swift */; };
 		C47309041EC05953004E9191 /* PersianDateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47309001EC05953004E9191 /* PersianDateDelegate.swift */; };
-		C47309051EC05953004E9191 /* PersianPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47309011EC05953004E9191 /* PersianPickerView.swift */; };
+		C47309051EC05953004E9191 /* PersianDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47309011EC05953004E9191 /* PersianDatePickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,7 @@
 		C47308FE1EC05953004E9191 /* Cal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cal.swift; sourceTree = "<group>"; };
 		C47308FF1EC05953004E9191 /* PersianDatePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersianDatePresenter.swift; sourceTree = "<group>"; };
 		C47309001EC05953004E9191 /* PersianDateDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersianDateDelegate.swift; sourceTree = "<group>"; };
-		C47309011EC05953004E9191 /* PersianPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersianPickerView.swift; sourceTree = "<group>"; };
+		C47309011EC05953004E9191 /* PersianDatePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersianDatePickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +83,7 @@
 				C47308FE1EC05953004E9191 /* Cal.swift */,
 				C47308FF1EC05953004E9191 /* PersianDatePresenter.swift */,
 				C47309001EC05953004E9191 /* PersianDateDelegate.swift */,
-				C47309011EC05953004E9191 /* PersianPickerView.swift */,
+				C47309011EC05953004E9191 /* PersianDatePickerView.swift */,
 				C47308E81EC05934004E9191 /* Info.plist */,
 			);
 			path = PersianDatePicker;
@@ -211,7 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C47309021EC05953004E9191 /* Cal.swift in Sources */,
-				C47309051EC05953004E9191 /* PersianPickerView.swift in Sources */,
+				C47309051EC05953004E9191 /* PersianDatePickerView.swift in Sources */,
 				C47309031EC05953004E9191 /* PersianDatePresenter.swift in Sources */,
 				C47309041EC05953004E9191 /* PersianDateDelegate.swift in Sources */,
 			);
@@ -278,7 +278,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -326,7 +326,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -348,6 +348,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PersianDatePicker/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ir.shatel.PersianDatePicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -367,6 +368,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PersianDatePicker/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ir.shatel.PersianDatePicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -420,6 +422,7 @@
 				C47308FA1EC05934004E9191 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C47308FB1EC05934004E9191 /* Build configuration list for PBXNativeTarget "PersianDatePickerTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +431,7 @@
 				C47308FD1EC05934004E9191 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

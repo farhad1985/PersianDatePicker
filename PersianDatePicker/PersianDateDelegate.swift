@@ -8,7 +8,9 @@
 
 import Foundation
 
-public protocol PersianDateDelegate {
+@objc public protocol PersianDateDelegate {
     
-    func persianDate(persianPickerView: PersianPickerView, year: Int, month: String, day: Int)
+    @objc optional func persianDate(persianDatePickerView: PersianDatePickerView, year: Int, monthName: String, day: Int)
+    @objc optional func persianDate(persianDatePickerView: PersianDatePickerView, year: Int, month: Int, day: Int)
+
 }
