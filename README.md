@@ -8,10 +8,23 @@
    - Xcode 8.1+
    - Swift 3.0+
 
+### Install
+
+you can use in cocoapods
+```swift
+pod 'PersianDatePicker'
+```
+
 
 <img src="https://raw.githubusercontent.com/farhad1985/PersianDatePicker/master/ScreenShot/Simulator%20Screen%20Shot%20May%208%2C%202017%2C%201.29.54%20PM.jpg"  height="242" width="442" />
 
+### Use
 
+you should import PersianDatePicker in your View
+
+```swift
+import PersianDatePicker
+```
 
 ### StoryBoard
 you can use in the storyboard, you add a UIView in your ViewController and inherit from [ PersianDatePickerView ]
