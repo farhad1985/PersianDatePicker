@@ -12,8 +12,7 @@ struct PersianDatePresenter {
     
     let cal = Cal()
     
-    init() {
-    }
+    init() {}
     
     func getYears() -> [Int] {
         return cal.getYears()
