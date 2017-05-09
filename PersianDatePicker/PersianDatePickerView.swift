@@ -25,7 +25,7 @@ public class PersianDatePickerView: UIView {
     fileprivate var pickerView = UIPickerView()
     fileprivate var persianDatePresenter: PersianDatePresenter!
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
