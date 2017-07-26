@@ -14,7 +14,7 @@ public class PersianDatePickerView: UIView {
     
     @IBInspectable var fontColor: UIColor = .black
     
-    enum Style {
+    public enum Style {
         case short
         case long
     }
@@ -24,7 +24,7 @@ public class PersianDatePickerView: UIView {
     var year = 1300
     var month = 1
     var day = 1
-    var pickerStyle: Style = .long {
+    public var pickerStyle: Style = .long {
         didSet {
             pickerView.reloadAllComponents()
         }
