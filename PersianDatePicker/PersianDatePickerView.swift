@@ -14,11 +14,21 @@ public class PersianDatePickerView: UIView {
     
     @IBInspectable var fontColor: UIColor = .black
     
+    enum Style {
+        case short
+        case long
+    }
+    
     public var delegate: PersianDateDelegate?
     
     var year = 1300
     var month = 1
     var day = 1
+    var pickerStyle: Style = .long {
+        didSet {
+            pickerView.reloadAllComponents()
+        }
+    }
     
     fileprivate var monthName: MonthName = .farvardin
     fileprivate var numberMonth = 1
@@ -55,7 +65,10 @@ public class PersianDatePickerView: UIView {
 extension PersianDatePickerView: UIPickerViewDataSource, UIPickerViewDelegate {
     
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 3
+        switch pickerStyle {
+        case .long: return 3
+        case .short: return 2
+        }
     }
     
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
