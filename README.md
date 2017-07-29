@@ -31,6 +31,12 @@ you can use in the storyboard, you add a UIView in your ViewController and inher
 
 <img src="https://github.com/farhad1985/PersianDatePicker/blob/master/ScreenShot/Screen%20Shot%202017-05-08%20at%201.30.16%20PM.png" height="202" width="442" />
 
+### Style
+you can use pickerStyle for two types . 
+
+<img src="https://raw.githubusercontent.com/farhad1985/PersianDatePicker/master/ScreenShot/Simulator%20Screen%20Shot%20Jul%2029%2C%202017%2C%2011.17.23%20AM.png" height="202" width="442" />
+
+
 ### Delegates
 
 then you should implement PersianDateDelegate like this :
