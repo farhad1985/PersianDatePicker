@@ -37,7 +37,7 @@ you can use pickerStyle for two types .
 <img src="https://raw.githubusercontent.com/farhad1985/PersianDatePicker/master/ScreenShot/Simulator%20Screen%20Shot%20Jul%2029%2C%202017%2C%2011.17.23%20AM.png" height="202" width="442" />
 
 ```swift
-        persianDatePicker.pickerStyle = .short
+ persianDatePicker.pickerStyle = .short
 ```
 
 
