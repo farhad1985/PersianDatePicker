@@ -21,9 +21,9 @@ public class PersianDatePickerView: UIView {
     
     public var delegate: PersianDateDelegate?
     
-    var year = 1300
-    var month = 1
-    var day = 1
+    public var year = 1300
+    public var month = 1
+    public var day = 1
     public var pickerStyle: Style = .long {
         didSet {
             pickerView.reloadAllComponents()
@@ -50,6 +50,19 @@ public class PersianDatePickerView: UIView {
         persianDatePresenter = PersianDatePresenter()
         pickerView.dataSource = self
         pickerView.delegate = self
+        
+        let currentDate = persianDatePresenter.getDateToday()
+        let currentYear = persianDatePresenter.getYears().filter { (item) -> Bool in
+            return item == currentDate.year
+        }
+        if currentYear.count > 0 {
+            let indexYear = currentYear[0] - 1300
+
+            pickerView.selectRow(indexYear, inComponent: 0, animated: true)
+            pickerView.selectRow(currentDate.month - 1, inComponent: 1, animated: true)
+            year = currentYear[0]
+            month = currentDate.month
+        }
     }
     
     override public func layoutSubviews() {
@@ -109,7 +122,6 @@ extension PersianDatePickerView: UIPickerViewDataSource, UIPickerViewDelegate {
     
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        
         switch component {
         case 0:
             year = persianDatePresenter.getYears()[row]
@@ -117,21 +129,24 @@ extension PersianDatePickerView: UIPickerViewDataSource, UIPickerViewDelegate {
         case 1:
             monthName = persianDatePresenter.getMonths()[row]
             numberMonth = row + 1
-            pickerView.reloadComponent(2)
-            
-            switch monthName {
-            case .farvardin, .ordibehesht, .khordad, .tir, .mordad, .shahrivar:
-                if day >= 31 {
-                    day = 31
-                }
-                
-            case .mehr, .aban, .azar, .dey, .bahman:
-                if day >= 30 {
-                    day = 30
-                }
-            case .esfand:
-                if day >= 29 {
-                    day = 29
+
+            if pickerStyle == .long {
+                pickerView.reloadComponent(2)
+
+                switch monthName {
+                case .farvardin, .ordibehesht, .khordad, .tir, .mordad, .shahrivar:
+                    if day >= 31 {
+                        day = 31
+                    }
+                    
+                case .mehr, .aban, .azar, .dey, .bahman:
+                    if day >= 30 {
+                        day = 30
+                    }
+                case .esfand:
+                    if day >= 29 {
+                        day = 29
+                    }
                 }
             }
             
@@ -142,8 +157,8 @@ extension PersianDatePickerView: UIPickerViewDataSource, UIPickerViewDelegate {
             break
         }
         
-        delegate?.persianDate!(persianDatePickerView: self, year: year, monthName: monthName.rawValue, day: day)
-        delegate?.persianDate!(persianDatePickerView: self, year: year, month: numberMonth, day: day)
+        delegate?.persianDate?(persianDatePickerView: self, year: year, monthName: monthName.rawValue, day: day)
+        delegate?.persianDate?(persianDatePickerView: self, year: year, month: numberMonth, day: day)
     }
 }
 

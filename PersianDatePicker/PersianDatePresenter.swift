@@ -34,4 +34,14 @@ struct PersianDatePresenter {
             return cal.getDays(lastDay: 29)
         }
     }
+    
+    func getDateToday() -> (year: Int, month: Int, day: Int) {
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd"
+        dateFormatter.calendar = Calendar(identifier: .persian)
+        let stringDate = dateFormatter.string(from: date)
+        let spliteDate = stringDate.components(separatedBy: "/")
+        return (year: Int(spliteDate[0])!, month: Int(spliteDate[1])!, day: Int(spliteDate[2])!)
+    }
 }
