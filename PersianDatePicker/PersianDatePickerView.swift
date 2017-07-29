@@ -24,6 +24,8 @@ public class PersianDatePickerView: UIView {
     public var year = 1300
     public var month = 1
     public var day = 1
+    public var font: UIFont?
+
     public var pickerStyle: Style = .long {
         didSet {
             pickerView.reloadAllComponents()
@@ -102,16 +104,26 @@ extension PersianDatePickerView: UIPickerViewDataSource, UIPickerViewDelegate {
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = fontColor
+        let format = NumberFormatter()
+        format.locale = Locale(identifier: "fa_IR")
+        
+        if let font = self.font {
+            label.font = font
+        }
         
         switch component {
         case 0:
-            label.text = String(persianDatePresenter.getYears()[row])
-            
+            let year = String(persianDatePresenter.getYears()[row])
+            let persianNumber = format.number(from: year)
+            label.text = format.string(from: persianNumber!)
+
         case 1:
             label.text = persianDatePresenter.getMonths()[row].rawValue
             
         case 2:
-            label.text = String(persianDatePresenter.getDays(month: monthName)[row])
+            let day = String(persianDatePresenter.getDays(month: monthName)[row])
+            let persianNumber = format.number(from: day)
+            label.text = format.string(from: persianNumber!)
             
         default:
             break

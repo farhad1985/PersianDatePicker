@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'PersianDatePicker'
-  s.version          = '0.1.3'
+  s.version          = '0.1.4'
   s.summary          = 'PersianDatePicker is a PickerView. by : farhad faramarzi'
 
  
