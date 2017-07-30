@@ -46,31 +46,24 @@ for set Font :
  persianDatePicker.font = UIFont(name: "IRANSansMobileFaNum-Light", size: 18)
 ```
 
-### Delegates
+### How to use in the code
 
-then you should implement PersianDateDelegate like this :
+It's very simple. 
 
 ```swift
-extension ViewController: PersianDateDelegate {
-    
-    func persianDate(persianDatePickerView: PersianDatePickerView, year: Int, month: Int, day: Int) {
-        label.text = "\(year)/\(month)/\(day)"
-    }
-}
-
+import PersianDatePicker
 ```
 
-if you need to show name's month, you have to impl this :
+```swift
+@IBOutlet weak var txtDate: UITextField!
+```
 
 ```swift
-extension ViewController: PersianDateDelegate {
-    
-    func persianDate(persianDatePickerView: PersianDatePickerView, year: Int, monthName: String, day: Int) {
-        label1.text = "\(day) - \(monthName) - \(year)"
-
+    let persianDatePicker = PersianDatePickerView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+    txtDate.inputView = persianDatePicker
+    persianDatePicker.onChange = { (year, month, day) in
+        self.txtDate.text = "\(year)/\(month)/\(day)"
     }
-}
-
 ```
 
 ## License
