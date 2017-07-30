@@ -65,6 +65,7 @@ public class PersianDatePickerView: UIView {
             pickerView.selectRow(currentDate.month - 1, inComponent: 1, animated: true)
             year = currentYear[0]
             month = currentDate.month
+            numberMonth = month
         }
     }
     
