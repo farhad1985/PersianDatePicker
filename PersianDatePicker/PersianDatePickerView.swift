@@ -11,6 +11,7 @@ import UIKit
 
 @IBDesignable
 public class PersianDatePickerView: UIView {
+    public typealias Listener = (_ year: Int, _ month: Int, _ day: Int) -> Void
     
     @IBInspectable var fontColor: UIColor = .black
     
@@ -19,7 +20,7 @@ public class PersianDatePickerView: UIView {
         case long
     }
     
-    public var delegate: PersianDateDelegate?
+    public var onChange: (Listener)?
     
     public var year = 1300
     public var month = 1
@@ -168,9 +169,7 @@ extension PersianDatePickerView: UIPickerViewDataSource, UIPickerViewDelegate {
         default:
             break
         }
-        
-        delegate?.persianDate?(persianDatePickerView: self, year: year, monthName: monthName.rawValue, day: day)
-        delegate?.persianDate?(persianDatePickerView: self, year: year, month: numberMonth, day: day)
+        self.onChange?(year, numberMonth, day)
     }
 }
 

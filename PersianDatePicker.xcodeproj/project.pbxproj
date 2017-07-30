@@ -12,7 +12,6 @@
 		C47308F51EC05934004E9191 /* PersianDatePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = C47308E71EC05934004E9191 /* PersianDatePicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C47309021EC05953004E9191 /* Cal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47308FE1EC05953004E9191 /* Cal.swift */; };
 		C47309031EC05953004E9191 /* PersianDatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47308FF1EC05953004E9191 /* PersianDatePresenter.swift */; };
-		C47309041EC05953004E9191 /* PersianDateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47309001EC05953004E9191 /* PersianDateDelegate.swift */; };
 		C47309051EC05953004E9191 /* PersianDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47309011EC05953004E9191 /* PersianDatePickerView.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,7 +34,6 @@
 		C47308F41EC05934004E9191 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C47308FE1EC05953004E9191 /* Cal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cal.swift; sourceTree = "<group>"; };
 		C47308FF1EC05953004E9191 /* PersianDatePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersianDatePresenter.swift; sourceTree = "<group>"; };
-		C47309001EC05953004E9191 /* PersianDateDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersianDateDelegate.swift; sourceTree = "<group>"; };
 		C47309011EC05953004E9191 /* PersianDatePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersianDatePickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,7 +80,6 @@
 				C47308E71EC05934004E9191 /* PersianDatePicker.h */,
 				C47308FE1EC05953004E9191 /* Cal.swift */,
 				C47308FF1EC05953004E9191 /* PersianDatePresenter.swift */,
-				C47309001EC05953004E9191 /* PersianDateDelegate.swift */,
 				C47309011EC05953004E9191 /* PersianDatePickerView.swift */,
 				C47308E81EC05934004E9191 /* Info.plist */,
 			);
@@ -213,7 +210,6 @@
 				C47309021EC05953004E9191 /* Cal.swift in Sources */,
 				C47309051EC05953004E9191 /* PersianDatePickerView.swift in Sources */,
 				C47309031EC05953004E9191 /* PersianDatePresenter.swift in Sources */,
-				C47309041EC05953004E9191 /* PersianDateDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
