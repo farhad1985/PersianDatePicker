@@ -46,7 +46,7 @@ for set Font :
  persianDatePicker.font = UIFont(name: "IRANSansMobileFaNum-Light", size: 18)
 ```
 
-### how to use in the code
+### How to use in the code
 
 It's very simple. 
 
