@@ -55,18 +55,18 @@ import PersianDatePicker
 ```
 
 ```swift
-    @IBOutlet weak var txtDate: UITextField!
+@IBOutlet weak var txtDate: UITextField!
 ```
 
 ```swift
-        let datePicker = PersianDatePickerView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
-        datePicker.pickerStyle = .long
-        datePicker.font = Global.Font.setRegular(size: 18)
-        txtDate.inputView = datePicker
-        txtDate.text = "\(datePicker.year)/\(datePicker.month)"
-        datePicker.onChange = { (year, month, day) in
-            self.txtDate.text = "\(year)/\(month)/\(day)"
-        }
+    let datePicker = PersianDatePickerView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+    datePicker.pickerStyle = .long
+    datePicker.font = Global.Font.setRegular(size: 18)
+    txtDate.inputView = datePicker
+    txtDate.text = "\(datePicker.year)/\(datePicker.month)"
+    datePicker.onChange = { (year, month, day) in
+        self.txtDate.text = "\(year)/\(month)/\(day)"
+    }
 ```
 
 ## License
