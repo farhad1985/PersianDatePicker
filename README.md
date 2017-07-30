@@ -40,6 +40,11 @@ you can use pickerStyle for two types .
  persianDatePicker.pickerStyle = .short
 ```
 
+for set Font :
+
+```swift
+ persianDatePicker.font = UIFont(name: "IRANSansMobileFaNum-Light", size: 18)
+```
 
 ### Delegates
 
