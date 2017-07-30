@@ -59,9 +59,9 @@ import PersianDatePicker
 ```
 
 ```swift
-    let datePicker = PersianDatePickerView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
-    txtDate.inputView = datePicker
-    datePicker.onChange = { (year, month, day) in
+    let persianDatePicker = PersianDatePickerView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+    txtDate.inputView = persianDatePicker
+    persianDatePicker.onChange = { (year, month, day) in
         self.txtDate.text = "\(year)/\(month)/\(day)"
     }
 ```
