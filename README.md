@@ -61,5 +61,6 @@ import PersianDatePicker
 
 ## License
 
-PersianDatePicker is released under the GPL2 license. 
+PersianDatePicker is available under the MIT license. See the LICENSE file for more information.
+
 
