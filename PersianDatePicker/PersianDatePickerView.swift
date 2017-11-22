@@ -36,7 +36,7 @@ public class PersianDatePickerView: UIView {
     fileprivate var monthName: MonthName = .farvardin
     fileprivate var numberMonth = 1
     fileprivate var pickerView = UIPickerView()
-    fileprivate var persianDatePresenter: PersianDatePresenter!
+    fileprivate var persianDatePresenter = PersianDatePresenter()
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -50,7 +50,10 @@ public class PersianDatePickerView: UIView {
     
     func setup() {
         addSubview(pickerView)
-        persianDatePresenter = PersianDatePresenter()
+        currectDatePicker()
+    }
+    
+    public func currectDatePicker() {
         pickerView.dataSource = self
         pickerView.delegate = self
         
@@ -60,7 +63,7 @@ public class PersianDatePickerView: UIView {
         }
         if currentYear.count > 0 {
             let indexYear = currentYear[0] - 1300
-
+            
             pickerView.selectRow(indexYear, inComponent: 0, animated: true)
             pickerView.selectRow(currentDate.month - 1, inComponent: 1, animated: true)
             if pickerStyle == .long {
@@ -72,7 +75,7 @@ public class PersianDatePickerView: UIView {
             numberMonth = month
         }
     }
-    
+        
     override public func layoutSubviews() {
         super.layoutSubviews()
         pickerView.translatesAutoresizingMaskIntoConstraints = false

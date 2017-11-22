@@ -20,5 +20,8 @@ class ViewController: UIViewController {
             print("\(year)/\(month)/\(day)")
         }
     }
+    @IBAction func didTapReset(_ sender: Any) {
+        persianDatePickerView.currectDatePicker()
+    }
 }
 
