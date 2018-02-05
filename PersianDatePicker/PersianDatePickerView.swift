@@ -67,7 +67,7 @@ public class PersianDatePickerView: UIView {
 	
     
     public func gotoCurrentDate() {	
-        let currentDate = persianDateDataSource.getDateToday()
+        let currentDate = persianDateDataSource.todayCompononents()
 		year = currentDate.year
 		month = currentDate.month
 		
