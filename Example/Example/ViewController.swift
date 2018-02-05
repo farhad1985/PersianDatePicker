@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func didTapReset(_ sender: Any) {
-        persianDatePickerView.currectDatePicker()
+        persianDatePickerView.gotoCurrentDate()
     }
 }
 
