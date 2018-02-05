@@ -24,7 +24,7 @@ public class PersianDatePickerView: UIView {
 	public var onChange: (Listener)?
 	public var font: UIFont?
 
-    public var pickerStyle: PersianDatePickerStyle = .long {
+    public var style: PersianDatePickerStyle = .long {
 		didSet {
             pickerView.reloadAllComponents()
         }
@@ -77,7 +77,7 @@ public class PersianDatePickerView: UIView {
 		pickerView.selectRow(yearIndex, inComponent: 0, animated: true)
 		pickerView.selectRow(monthIndex, inComponent: 1, animated: true)
 
-		if pickerStyle == .long {
+		if style == .long {
 			day = currentDate.day
 			pickerView.selectRow(day - 1, inComponent: 2, animated: true)
 		}
@@ -98,7 +98,7 @@ public class PersianDatePickerView: UIView {
 //MARK: - PickerView DataSource
 extension PersianDatePickerView: UIPickerViewDataSource {
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return pickerStyle.numberOfComponents
+        return style.numberOfComponents
     }
 	
 	
@@ -167,7 +167,7 @@ extension PersianDatePickerView: UIPickerViewDelegate {
 			break
 		}
 		
-		if pickerStyle == .long {
+		if style == .long {
 			pickerView.reloadComponent(2)
 		}
 		
