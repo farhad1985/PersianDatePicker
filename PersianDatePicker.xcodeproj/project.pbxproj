@@ -10,8 +10,7 @@
 		C47308EE1EC05934004E9191 /* PersianDatePicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C47308E41EC05934004E9191 /* PersianDatePicker.framework */; };
 		C47308F31EC05934004E9191 /* PersianDatePickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47308F21EC05934004E9191 /* PersianDatePickerTests.swift */; };
 		C47308F51EC05934004E9191 /* PersianDatePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = C47308E71EC05934004E9191 /* PersianDatePicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C47309021EC05953004E9191 /* Cal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47308FE1EC05953004E9191 /* Cal.swift */; };
-		C47309031EC05953004E9191 /* PersianDatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47308FF1EC05953004E9191 /* PersianDatePresenter.swift */; };
+		C47309031EC05953004E9191 /* PersianDateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47308FF1EC05953004E9191 /* PersianDateDataSource.swift */; };
 		C47309051EC05953004E9191 /* PersianDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47309011EC05953004E9191 /* PersianDatePickerView.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,8 +31,7 @@
 		C47308ED1EC05934004E9191 /* PersianDatePickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PersianDatePickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C47308F21EC05934004E9191 /* PersianDatePickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersianDatePickerTests.swift; sourceTree = "<group>"; };
 		C47308F41EC05934004E9191 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C47308FE1EC05953004E9191 /* Cal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cal.swift; sourceTree = "<group>"; };
-		C47308FF1EC05953004E9191 /* PersianDatePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersianDatePresenter.swift; sourceTree = "<group>"; };
+		C47308FF1EC05953004E9191 /* PersianDateDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersianDateDataSource.swift; sourceTree = "<group>"; };
 		C47309011EC05953004E9191 /* PersianDatePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersianDatePickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,8 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				C47308E71EC05934004E9191 /* PersianDatePicker.h */,
-				C47308FE1EC05953004E9191 /* Cal.swift */,
-				C47308FF1EC05953004E9191 /* PersianDatePresenter.swift */,
+				C47308FF1EC05953004E9191 /* PersianDateDataSource.swift */,
 				C47309011EC05953004E9191 /* PersianDatePickerView.swift */,
 				C47308E81EC05934004E9191 /* Info.plist */,
 			);
@@ -207,9 +204,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C47309021EC05953004E9191 /* Cal.swift in Sources */,
 				C47309051EC05953004E9191 /* PersianDatePickerView.swift in Sources */,
-				C47309031EC05953004E9191 /* PersianDatePresenter.swift in Sources */,
+				C47309031EC05953004E9191 /* PersianDateDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

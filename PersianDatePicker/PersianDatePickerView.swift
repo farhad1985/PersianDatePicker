@@ -11,33 +11,27 @@ import UIKit
 
 @IBDesignable
 public class PersianDatePickerView: UIView {
-    public typealias Listener = (_ year: Int, _ month: Int, _ day: Int) -> Void
-    
-    @IBInspectable var fontColor: UIColor = .black
-    
-    public enum Style {
-        case short
-        case long
-    }
-    
-    public var onChange: (Listener)?
-    
-    public var year = 1300
-    public var month = 1
-    public var day = 1
-    public var font: UIFont?
+	//MARK: - Inspectables
+	@IBInspectable var fontColor: UIColor = .black
+	//MARK: - Properties
+	public var year = 1300
+	public var month = 1
+	public var day = 1
 
-    public var pickerStyle: Style = .long {
-        didSet {
+	fileprivate let pickerView = UIPickerView()
+	fileprivate let persianDateDataSource = PersianDateDataSource()
+	
+	public var onChange: (Listener)?
+	public var font: UIFont?
+
+    public var style: PersianDatePickerStyle = .long {
+		didSet {
             pickerView.reloadAllComponents()
         }
     }
-    
-    fileprivate var monthName: MonthName = .farvardin
-    fileprivate var numberMonth = 1
-    fileprivate var pickerView = UIPickerView()
-    fileprivate var persianDatePresenter = PersianDatePresenter()
-    
+	
+	
+	//MARK: - Initialization
     override public init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -47,35 +41,49 @@ public class PersianDatePickerView: UIView {
         super.init(coder: aDecoder)
         setup()
     }
+	
+	convenience public init(date: Date, timeZone: TimeZone? = nil) {
+		self.init()
+		setup()
+		
+		var cal = Calendar(identifier: .persian)
+		timeZone.map { cal.timeZone = $0 }
+		
+		let comps = cal.dateComponents([.day, .month, .year], from: date)
+		(year, month, day) = (comps.year!, comps.month!, comps.day!)
+	}
     
-    func setup() {
-        addSubview(pickerView)
-        currectDatePicker()
+    private func setup() {
+		setupPicker()
+		gotoCurrentDate()
     }
+	
+	
+	private func setupPicker() {
+		addSubview(pickerView)
+		pickerView.dataSource = self
+		pickerView.delegate = self
+	}
+	
     
-    public func currectDatePicker() {
-        pickerView.dataSource = self
-        pickerView.delegate = self
-        
-        let currentDate = persianDatePresenter.getDateToday()
-        let currentYear = persianDatePresenter.getYears().filter { (item) -> Bool in
-            return item == currentDate.year
-        }
-        if currentYear.count > 0 {
-            let indexYear = currentYear[0] - 1300
-            
-            pickerView.selectRow(indexYear, inComponent: 0, animated: true)
-            pickerView.selectRow(currentDate.month - 1, inComponent: 1, animated: true)
-            if pickerStyle == .long {
-                pickerView.selectRow(currentDate.day - 1, inComponent: 2, animated: true)
-                day = currentDate.day
-            }
-            year = currentYear[0]
-            month = currentDate.month
-            numberMonth = month
-        }
+    public func gotoCurrentDate() {	
+        let currentDate = persianDateDataSource.todayCompononents()
+		year = currentDate.year
+		month = currentDate.month
+		
+		let yearIndex = persianDateDataSource.years.index(of: year)!
+		let monthIndex = month - 1
+		
+		pickerView.selectRow(yearIndex, inComponent: 0, animated: true)
+		pickerView.selectRow(monthIndex, inComponent: 1, animated: true)
+
+		if style == .long {
+			day = currentDate.day
+			pickerView.selectRow(day - 1, inComponent: 2, animated: true)
+		}
     }
-        
+	
+	
     override public func layoutSubviews() {
         super.layoutSubviews()
         pickerView.translatesAutoresizingMaskIntoConstraints = false
@@ -86,100 +94,102 @@ public class PersianDatePickerView: UIView {
     }
 }
 
-extension PersianDatePickerView: UIPickerViewDataSource, UIPickerViewDelegate {
-    
+
+//MARK: - PickerView DataSource
+extension PersianDatePickerView: UIPickerViewDataSource {
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        switch pickerStyle {
-        case .long: return 3
-        case .short: return 2
-        }
+        return style.numberOfComponents
     }
-    
+	
+	
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch component {
         case 0:
-            return persianDatePresenter.getYears().count
-            
+            return persianDateDataSource.years.count
         case 1:
-            return persianDatePresenter.getMonths().count
-            
+            return persianDateDataSource.persianMonths.count
         default:
-            return persianDatePresenter.getDays(month: monthName).count
+			return persianDateDataSource.daysRange(ofYear: year, month: month).count
         }
-        
-    }
-    
-    public func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        let label = UILabel()
-        label.textAlignment = .center
-        label.textColor = fontColor
-        let format = NumberFormatter()
-        format.locale = Locale(identifier: "fa_IR")
-        
-        if let font = self.font {
-            label.font = font
-        }
-        
-        switch component {
-        case 0:
-            let year = String(persianDatePresenter.getYears()[row])
-            let persianNumber = format.number(from: year)
-            label.text = format.string(from: persianNumber!)
-
-        case 1:
-            label.text = persianDatePresenter.getMonths()[row].rawValue
-            
-        case 2:
-            let day = String(persianDatePresenter.getDays(month: monthName)[row])
-            let persianNumber = format.number(from: day)
-            label.text = format.string(from: persianNumber!)
-            
-        default:
-            break
-        }
-        
-        return label
-    }
-    
-    public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-        switch component {
-        case 0:
-            year = persianDatePresenter.getYears()[row]
-            
-        case 1:
-            monthName = persianDatePresenter.getMonths()[row]
-            numberMonth = row + 1
-
-            if pickerStyle == .long {
-                pickerView.reloadComponent(2)
-
-                switch monthName {
-                case .farvardin, .ordibehesht, .khordad, .tir, .mordad, .shahrivar:
-                    if day >= 31 {
-                        day = 31
-                    }
-                    
-                case .mehr, .aban, .azar, .dey, .bahman:
-                    if day >= 30 {
-                        day = 30
-                    }
-                case .esfand:
-                    if day >= 29 {
-                        day = 29
-                    }
-                }
-            }
-            
-        case 2:
-            day = persianDatePresenter.getDays(month: monthName)[row]
-            
-        default:
-            break
-        }
-        self.onChange?(year, numberMonth, day)
     }
 }
+
+
+//MARK: - PickerView Delegate
+extension PersianDatePickerView: UIPickerViewDelegate {
+	public func pickerView(_ pickerView: UIPickerView,
+						   viewForRow row: Int,
+						   forComponent component: Int,
+						   reusing view: UIView?) -> UIView {
+		let label = UILabel()
+		label.textAlignment = .center
+		label.textColor = fontColor
+		let format = NumberFormatter()
+		format.locale = Locale(identifier: "fa_IR")
+		
+		if let font = self.font {
+			label.font = font
+		}
+		
+		switch component {
+		case 0:
+			let year = String(persianDateDataSource.years[row])
+			let persianNumber = format.number(from: year)
+			label.text = format.string(from: persianNumber!)
+			
+		case 1:
+			label.text = persianDateDataSource.persianMonths[row]
+			
+		case 2:
+			let day = String(persianDateDataSource.daysRange(ofYear: year, month: month)[row])
+			label.text = format.string(from: format.number(from: day)!)
+			
+		default:
+			break
+		}
+		
+		return label
+	}
+	
+	
+	public func pickerView(_ pickerView: UIPickerView,
+						   didSelectRow row: Int,
+						   inComponent component: Int) {
+		
+		switch component {
+		case 0:
+			year = persianDateDataSource.years[row]
+		case 1:
+			month = row + 1
+		case 2:
+			day = persianDateDataSource.daysRange(ofYear: year, month: month)[row]
+		default:
+			break
+		}
+		
+		if style == .long {
+			pickerView.reloadComponent(2)
+		}
+		
+		self.onChange?(year, month, day)
+	}
+}
+
+public typealias Listener = (_ year: Int, _ month: Int, _ day: Int) -> Void
+public enum PersianDatePickerStyle {
+	case short
+	case long
+	
+	fileprivate var numberOfComponents: Int {
+		switch self {
+		case .short:
+			return 2
+		case .long:
+			return 3
+		}
+	}
+}
+
 
 
 
