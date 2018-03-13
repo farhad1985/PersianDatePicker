@@ -68,19 +68,23 @@ public class PersianDatePickerView: UIView {
     
     public func gotoCurrentDate() {	
         let currentDate = persianDateDataSource.todayCompononents()
-		year = currentDate.year
-		month = currentDate.month
-		
-		let yearIndex = persianDateDataSource.years.index(of: year)!
-		let monthIndex = month - 1
-		
-		pickerView.selectRow(yearIndex, inComponent: 0, animated: true)
-		pickerView.selectRow(monthIndex, inComponent: 1, animated: true)
-
-		if style == .long {
-			day = currentDate.day
-			pickerView.selectRow(day - 1, inComponent: 2, animated: true)
-		}
+        setDatePicker(year: currentDate.year, month: currentDate.month, day: currentDate.day)
+    }
+    
+    public func setPersianDate(year: Int, month: Int, day: Int) {
+        setDatePicker(year: year, month: month, day: day)
+    }
+    
+    private func setDatePicker(year: Int, month: Int, day: Int) {
+        let yearIndex = persianDateDataSource.years.index(of: year)!
+        let monthIndex = month - 1
+        
+        pickerView.selectRow(yearIndex, inComponent: 0, animated: true)
+        pickerView.selectRow(monthIndex, inComponent: 1, animated: true)
+        
+        if style == .long {
+            pickerView.selectRow(day - 1, inComponent: 2, animated: true)
+        }
     }
 	
 	

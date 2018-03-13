@@ -39,5 +39,5 @@ struct PersianDateDataSource {
 		let date = Date()
 		let comps = cal.dateComponents([.year, .month, .day], from: date)
 		return (year: comps.year!, month: comps.month!, day: comps.day!)
-	}
+	}    
 }
