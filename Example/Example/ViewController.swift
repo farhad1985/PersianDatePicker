@@ -18,7 +18,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         persianDatePickerView.onChange = {(year, month, day) in
             print("\(year)/\(month)/\(day)")
+            print(self.persianDatePickerView.getGregorianDate()!)
+            print(self.persianDatePickerView.getPersianDate()!)
+            print("next day : \(self.persianDatePickerView.nextDay(by: self.persianDatePickerView.getPersianDate()!))")
         }
+        
     }
     @IBAction func didTapReset(_ sender: Any) {
         persianDatePickerView.gotoCurrentDate()
