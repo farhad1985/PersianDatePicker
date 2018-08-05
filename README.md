@@ -59,6 +59,28 @@ import PersianDatePicker
     }
 ```
 
+if you want to have persian date:
+
+```
+     persianDatePickerView.getPersianDate()
+```
+
+and if you want to have gregorian date:
+
+```
+     persianDatePickerView.getGregorianDate()
+```
+
+
+you can have next day or back day :
+
+```
+     guard let persianDate = persianDatePickerView.getPersianDate() else {return}
+     print("next day : \(self.persianDatePickerView.nextDay(by: persianDate))")
+```
+
+
+
 ## License
 
 PersianDatePicker is available under the MIT license. See the LICENSE file for more information.
