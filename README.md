@@ -76,9 +76,10 @@ you can have next day or back day :
 
 ```
      guard let persianDate = persianDatePickerView.getPersianDate() else {return}
-     print("next day : \(self.persianDatePickerView.nextDay(by: persianDate))")
+     self.persianDatePickerView.nextDay(by: persianDate)
 ```
 
+please download example and test it.
 
 
 ## License
