@@ -71,6 +71,11 @@ public class PersianDatePickerView: UIView {
         setDatePicker(year: currentDate.year, month: currentDate.month, day: currentDate.day)
     }
     
+    public func gotoDate(date: Date) {
+        let persianDate = persianDateDataSource.convertToPersian(date: date)
+        setDatePicker(year: persianDate.year, month: persianDate.month, day: persianDate.day)
+    }
+    
     public func setPersianDate(year: Int, month: Int, day: Int) {
         setDatePicker(year: year, month: month, day: day)
     }
@@ -79,16 +84,18 @@ public class PersianDatePickerView: UIView {
         return persianDateDataSource.convertToGregorian(year: year, month: month, day: day)
     }
     
-    public func getPersianDate() -> Date? {
+    public func getPersianDate() -> String? {
         return persianDateDataSource.getPersianDate(year: year, month: month, day: day)
     }
     
-    public func nextDay(by date: Date) -> Date {
-        return persianDateDataSource.nextDay(by: date)
+    public func nextDay(by date: String) {
+        let d = persianDateDataSource.nextDay(by: date)
+        gotoDate(date: d)
     }
     
-    public func backDay(by date: Date) -> Date {
-        return persianDateDataSource.backDay(by:date)
+    public func backDay(by date: String) {
+        let d = persianDateDataSource.backDay(by:date)
+        gotoDate(date: d)
     }
     
     private func setDatePicker(year: Int, month: Int, day: Int) {
