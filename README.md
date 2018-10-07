@@ -52,31 +52,32 @@ import PersianDatePicker
 ```
 
 ```swift
-    let persianDatePicker = PersianDatePickerView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
-    txtDate.inputView = persianDatePicker
-    persianDatePicker.onChange = { (year, month, day) in
-        self.txtDate.text = "\(year)/\(month)/\(day)"
-    }
+let persianDatePicker = PersianDatePickerView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+txtDate.inputView = persianDatePicker
+
+persianDatePicker.onChange = { (year, month, day) in
+    self.txtDate.text = "\(year)/\(month)/\(day)"
+}
 ```
 
 if you want to have persian date:
 
-```
-     persianDatePickerView.getPersianDate()
+```swift
+persianDatePickerView.getPersianDate()
 ```
 
 and if you want to have gregorian date:
 
-```
-     persianDatePickerView.getGregorianDate()
+```swift
+persianDatePickerView.getGregorianDate()
 ```
 
 
 you can have next day or back day :
 
-```
-     guard let persianDate = persianDatePickerView.getPersianDate() else {return}
-     self.persianDatePickerView.nextDay(by: persianDate)
+```swift
+guard let persianDate = persianDatePickerView.getPersianDate() else {return}
+self.persianDatePickerView.nextDay(by: persianDate)
 ```
 
 please download example and test it.
