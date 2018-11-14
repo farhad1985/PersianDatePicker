@@ -39,7 +39,6 @@
 		167D2E88216A358F00A59D69 /* Shadowable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadowable.swift; sourceTree = "<group>"; };
 		C47308E41EC05934004E9191 /* PersianDatePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PersianDatePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C47308E71EC05934004E9191 /* PersianDatePicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersianDatePicker.h; sourceTree = "<group>"; };
-		C47308E81EC05934004E9191 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C47308ED1EC05934004E9191 /* PersianDatePickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PersianDatePickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C47308F21EC05934004E9191 /* PersianDatePickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersianDatePickerTests.swift; sourceTree = "<group>"; };
 		C47308F41EC05934004E9191 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,7 +95,6 @@
 				16524A522169DA5E00C1DD16 /* PersianPickerView.swift */,
 				167D2E84216A354500A59D69 /* CustomView.swift */,
 				167D2E85216A354500A59D69 /* ShadowView.swift */,
-				C47308E81EC05934004E9191 /* Info.plist */,
 			);
 			path = PersianDatePicker;
 			sourceTree = "<group>";
