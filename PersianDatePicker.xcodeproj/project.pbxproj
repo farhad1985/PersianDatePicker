@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16524A4F2169D79D00C1DD16 /* PersianDatePickerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16524A4E2169D79D00C1DD16 /* PersianDatePickerPresenter.swift */; };
+		16524A512169D99200C1DD16 /* PersianPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16524A502169D99200C1DD16 /* PersianPickerView.xib */; };
+		16524A532169DA5E00C1DD16 /* PersianPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16524A522169DA5E00C1DD16 /* PersianPickerView.swift */; };
+		167D2E86216A354500A59D69 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167D2E84216A354500A59D69 /* CustomView.swift */; };
+		167D2E87216A354500A59D69 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167D2E85216A354500A59D69 /* ShadowView.swift */; };
+		167D2E89216A358F00A59D69 /* Shadowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167D2E88216A358F00A59D69 /* Shadowable.swift */; };
 		C47308EE1EC05934004E9191 /* PersianDatePicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C47308E41EC05934004E9191 /* PersianDatePicker.framework */; };
 		C47308F31EC05934004E9191 /* PersianDatePickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47308F21EC05934004E9191 /* PersianDatePickerTests.swift */; };
 		C47308F51EC05934004E9191 /* PersianDatePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = C47308E71EC05934004E9191 /* PersianDatePicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -25,6 +31,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		16524A4E2169D79D00C1DD16 /* PersianDatePickerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersianDatePickerPresenter.swift; sourceTree = "<group>"; };
+		16524A502169D99200C1DD16 /* PersianPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersianPickerView.xib; sourceTree = "<group>"; };
+		16524A522169DA5E00C1DD16 /* PersianPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersianPickerView.swift; sourceTree = "<group>"; };
+		167D2E84216A354500A59D69 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		167D2E85216A354500A59D69 /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		167D2E88216A358F00A59D69 /* Shadowable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadowable.swift; sourceTree = "<group>"; };
 		C47308E41EC05934004E9191 /* PersianDatePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PersianDatePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C47308E71EC05934004E9191 /* PersianDatePicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersianDatePicker.h; sourceTree = "<group>"; };
 		C47308E81EC05934004E9191 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,6 +90,12 @@
 				C47308E71EC05934004E9191 /* PersianDatePicker.h */,
 				C47308FF1EC05953004E9191 /* PersianDateDataSource.swift */,
 				C47309011EC05953004E9191 /* PersianDatePickerView.swift */,
+				16524A4E2169D79D00C1DD16 /* PersianDatePickerPresenter.swift */,
+				16524A502169D99200C1DD16 /* PersianPickerView.xib */,
+				167D2E88216A358F00A59D69 /* Shadowable.swift */,
+				16524A522169DA5E00C1DD16 /* PersianPickerView.swift */,
+				167D2E84216A354500A59D69 /* CustomView.swift */,
+				167D2E85216A354500A59D69 /* ShadowView.swift */,
 				C47308E81EC05934004E9191 /* Info.plist */,
 			);
 			path = PersianDatePicker;
@@ -187,6 +205,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16524A512169D99200C1DD16 /* PersianPickerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,7 +223,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				167D2E87216A354500A59D69 /* ShadowView.swift in Sources */,
+				167D2E89216A358F00A59D69 /* Shadowable.swift in Sources */,
+				167D2E86216A354500A59D69 /* CustomView.swift in Sources */,
 				C47309051EC05953004E9191 /* PersianDatePickerView.swift in Sources */,
+				16524A532169DA5E00C1DD16 /* PersianPickerView.swift in Sources */,
+				16524A4F2169D79D00C1DD16 /* PersianDatePickerPresenter.swift in Sources */,
 				C47309031EC05953004E9191 /* PersianDateDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

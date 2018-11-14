@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        persianDatePickerView.style = .short
         persianDatePickerView.onChange = {(year, month, day) in
             print("\(year)/\(month)/\(day)")
 //            print("gregorian Date : \(self.persianDatePickerView.getGregorianDate()!)")
@@ -33,6 +34,13 @@ class ViewController: UIViewController {
     
     @IBAction func didTapBackDay(_ sender: Any) {
         self.persianDatePickerView.backDay(by: self.persianDatePickerView.getPersianDate()!)
+    }
+    
+    @IBAction func didTapPresent(_ sender: Any) {
+        let pView = PersianDatePickerPresenter()
+        pView.show(in: self) { persianDate in
+            print(persianDate)
+        }
     }
     
 }
