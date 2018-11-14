@@ -1,6 +1,9 @@
 ## PersianDatePicker
 
  PersianDatePicker written in Swift
+ 
+ <img src="https://raw.githubusercontent.com/farhad1985/PersianDatePicker/master/ScreenShot/demo.gif"  height="668" width="375" />
+
 
 ### Requirements
 
@@ -80,7 +83,18 @@ guard let persianDate = persianDatePickerView.getPersianDate() else {return}
 self.persianDatePickerView.nextDay(by: persianDate)
 ```
 
+if you want to use of dialog: 
+
+<img src="https://raw.githubusercontent.com/farhad1985/PersianDatePicker/master/ScreenShot/dialog.jpeg"  height="400" width="375"  />
+
+```swift
+        let pView = PersianDatePickerPresenter()
+        pView.show(in: self) { persianDate in
+            print(persianDate)
+        }
+```
 please download example and test it.
+
 
 
 ## License
