@@ -37,11 +37,11 @@
 		167D2E84216A354500A59D69 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		167D2E85216A354500A59D69 /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		167D2E88216A358F00A59D69 /* Shadowable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadowable.swift; sourceTree = "<group>"; };
+		16CACE0B219C47BD008BEC92 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C47308E41EC05934004E9191 /* PersianDatePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PersianDatePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C47308E71EC05934004E9191 /* PersianDatePicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersianDatePicker.h; sourceTree = "<group>"; };
 		C47308ED1EC05934004E9191 /* PersianDatePickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PersianDatePickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C47308F21EC05934004E9191 /* PersianDatePickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersianDatePickerTests.swift; sourceTree = "<group>"; };
-		C47308F41EC05934004E9191 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C47308FF1EC05953004E9191 /* PersianDateDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersianDateDataSource.swift; sourceTree = "<group>"; };
 		C47309011EC05953004E9191 /* PersianDatePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersianDatePickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,6 +94,7 @@
 				167D2E88216A358F00A59D69 /* Shadowable.swift */,
 				16524A522169DA5E00C1DD16 /* PersianPickerView.swift */,
 				167D2E84216A354500A59D69 /* CustomView.swift */,
+				16CACE0B219C47BD008BEC92 /* Info.plist */,
 				167D2E85216A354500A59D69 /* ShadowView.swift */,
 			);
 			path = PersianDatePicker;
@@ -103,7 +104,6 @@
 			isa = PBXGroup;
 			children = (
 				C47308F21EC05934004E9191 /* PersianDatePickerTests.swift */,
-				C47308F41EC05934004E9191 /* Info.plist */,
 			);
 			path = PersianDatePickerTests;
 			sourceTree = "<group>";
@@ -298,6 +298,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -344,6 +345,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";

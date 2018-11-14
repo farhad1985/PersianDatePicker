@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16CACE08219C4714008BEC92 /* PersianDatePicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16CACE07219C4714008BEC92 /* PersianDatePicker.framework */; };
+		16CACE09219C4714008BEC92 /* PersianDatePicker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 16CACE07219C4714008BEC92 /* PersianDatePicker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C458114B1FC433CD005A8248 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C458114A1FC433CD005A8248 /* AppDelegate.swift */; };
 		C458114D1FC433CD005A8248 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C458114C1FC433CD005A8248 /* ViewController.swift */; };
 		C45811501FC433CD005A8248 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C458114E1FC433CD005A8248 /* Main.storyboard */; };
 		C45811521FC433CD005A8248 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C45811511FC433CD005A8248 /* Assets.xcassets */; };
 		C45811551FC433CD005A8248 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45811531FC433CD005A8248 /* LaunchScreen.storyboard */; };
 		C45811601FC433CD005A8248 /* ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C458115F1FC433CD005A8248 /* ExampleUITests.swift */; };
-		C45811711FC43510005A8248 /* PersianDatePicker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C458116C1FC434AC005A8248 /* PersianDatePicker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,13 +28,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		C45811701FC434FF005A8248 /* Embed Frameworks */ = {
+		16CACE0A219C4714008BEC92 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C45811711FC43510005A8248 /* PersianDatePicker.framework in Embed Frameworks */,
+				16CACE09219C4714008BEC92 /* PersianDatePicker.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -41,6 +42,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		16CACE07219C4714008BEC92 /* PersianDatePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PersianDatePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C45811471FC433CD005A8248 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C458114A1FC433CD005A8248 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C458114C1FC433CD005A8248 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16CACE08219C4714008BEC92 /* PersianDatePicker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +78,7 @@
 		C458113E1FC433CD005A8248 = {
 			isa = PBXGroup;
 			children = (
+				16CACE07219C4714008BEC92 /* PersianDatePicker.framework */,
 				C45811491FC433CD005A8248 /* Example */,
 				C458115E1FC433CD005A8248 /* ExampleUITests */,
 				C45811481FC433CD005A8248 /* Products */,
@@ -131,7 +135,7 @@
 				C45811431FC433CD005A8248 /* Sources */,
 				C45811441FC433CD005A8248 /* Frameworks */,
 				C45811451FC433CD005A8248 /* Resources */,
-				C45811701FC434FF005A8248 /* Embed Frameworks */,
+				16CACE0A219C4714008BEC92 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

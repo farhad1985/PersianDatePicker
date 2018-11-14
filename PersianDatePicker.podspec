@@ -11,5 +11,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '9.0'
   s.source_files = 'PersianDatePicker/*'
+  s.exclude_files = "PersianDatePicker/**/*.plist"
+  s.swift_version = '4.2'
 
 end
