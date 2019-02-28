@@ -19,7 +19,7 @@ public class PersianDatePickerView: UIView {
 	public var day = 1
 
 	fileprivate let pickerView = UIPickerView()
-	fileprivate let persianDateDataSource = PersianDateDataSource()
+    fileprivate var persianDateDataSource = PersianDateDataSource()
 	
 	public var onChange: (Listener)?
 	public var font: UIFont?
@@ -65,7 +65,17 @@ public class PersianDatePickerView: UIView {
 		pickerView.delegate = self
 	}
 	
-    
+    public func setYearsRange(fromYear : Int , toYear : Int) {
+        persianDateDataSource.years = Array (fromYear...toYear)
+    }
+    public func setMaxYear(toYear : Int) {
+        persianDateDataSource.years = Array (1300...toYear)
+    }
+    public func setMinYear(fromYear : Int) {
+        persianDateDataSource.years = Array (fromYear...1500)
+    }
+
+
     public func gotoCurrentDate() {	
         let currentDate = persianDateDataSource.todayCompononents()
         setDatePicker(year: currentDate.year, month: currentDate.month, day: currentDate.day)

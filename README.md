@@ -62,6 +62,11 @@ persianDatePicker.onChange = { (year, month, day) in
     self.txtDate.text = "\(year)/\(month)/\(day)"
 }
 ```
+if you want to set years range:
+
+```swift
+persianDatePickerView.setYearsRange(fromYear : 1390 , toYear : 1400)
+```
 
 if you want to have persian date:
 
