@@ -55,16 +55,19 @@ struct PersianDateDataSource {
     
     func convertToGregorian(year: Int, month: Int, day: Int) -> Date? {
         guard let persianDate = getPersianDate(year: year, month: month, day: day) else {return nil}
+        let persianFormatter = DateFormatter()
+        persianFormatter.dateFormat = "yyyy/MM/dd"
+        persianFormatter.calendar = Calendar(identifier: .persian)
+        let pdate = persianFormatter.date(from: persianDate)
+        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        guard let pDate = dateFormatter.date(from: persianDate) else {return nil}
-        
-        let gregorianDateString = dateFormatter.string(from: pDate)
+        let gregorianDateString = dateFormatter.string(from: pdate!)
         dateFormatter.calendar = Calendar(identifier: .gregorian)
         dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
         return dateFormatter.date(from: gregorianDateString)
     }
-    
+
     func convertToPersian(date: Date) -> (year: Int, month: Int, day: Int) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy/MM/dd"
