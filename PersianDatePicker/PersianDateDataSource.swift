@@ -11,7 +11,7 @@ import UIKit
 struct PersianDateDataSource {
 	//MARK: - Properties
 	private let cal: Calendar
-	var years: [Int]
+	var years: [Int]!
 	var persianMonths: [String]
 	
 	init() {
@@ -21,8 +21,10 @@ struct PersianDateDataSource {
 			return c
 		}()
 		
-		years = Array(1300...1500)
 		persianMonths = cal.monthSymbols
+        
+        let year = todayCompononents().year - 5
+        years = Array(year...year+100)
 	}
 	
 	

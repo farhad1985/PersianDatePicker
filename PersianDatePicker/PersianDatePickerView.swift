@@ -67,12 +67,15 @@ public class PersianDatePickerView: UIView {
 	
     public func setYearsRange(fromYear : Int , toYear : Int) {
         persianDateDataSource.years = Array (fromYear...toYear)
+        setDatePicker(year: year, month: month, day: day)
     }
     public func setMaxYear(toYear : Int) {
         persianDateDataSource.years = Array (1300...toYear)
+        setDatePicker(year: year, month: month, day: day)
     }
     public func setMinYear(fromYear : Int) {
         persianDateDataSource.years = Array (fromYear...1500)
+        setDatePicker(year: year, month: month, day: day)
     }
 
 
@@ -109,7 +112,7 @@ public class PersianDatePickerView: UIView {
     }
     
     private func setDatePicker(year: Int, month: Int, day: Int) {
-        let yearIndex = persianDateDataSource.years.index(of: year)!
+        let yearIndex = persianDateDataSource.years.firstIndex(of: year)!
         let monthIndex = month - 1
         self.year = year
         self.month = month
@@ -118,6 +121,7 @@ public class PersianDatePickerView: UIView {
         pickerView.selectRow(monthIndex, inComponent: 1, animated: true)
         
         if style == .long {
+            pickerView(pickerView, didSelectRow: day - 1, inComponent: 2)
             pickerView.selectRow(day - 1, inComponent: 2, animated: true)
         }
     }
