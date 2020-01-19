@@ -1,16 +1,16 @@
 
 //
-//  PersianPickerView.swift
-//  PersianPickerView
+//  GregorianDatePickerView.swift
+//  GregorianDatePickerView
 //
-//  Created by Farhad on 5/7/17.
-//  Copyright © 2017 Farhad. All rights reserved.
+//  Created by Amirmahdi on 19/1/20.
+//  Copyright © 2020 AmirFT. All rights reserved.
 //
 
 import UIKit
 
 @IBDesignable
-public class PersianDatePickerView: UIView {
+public class GregorianDatePickerView: UIView {
 	//MARK: - Inspectables
 	@IBInspectable var fontColor: UIColor = .black
 	//MARK: - Properties
@@ -19,12 +19,12 @@ public class PersianDatePickerView: UIView {
 	public var day = 1
 
 	fileprivate let pickerView = UIPickerView()
-	fileprivate var persianDateDataSource = PersianDateDataSource(isPersian: true)
+	fileprivate var persianDateDataSource = PersianDateDataSource(isPersian: false)
 	
-	public var onChange: (Listener)?
+	public var onChange: (GregorianListener)?
 	public var font: UIFont?
-	public var isPersian = true
-    public var style: PersianDatePickerStyle = .long {
+	public var isPersian = false
+    public var style: GregorianDatePickerStyle = .long {
 		didSet {
             pickerView.reloadAllComponents()
         }
@@ -135,7 +135,7 @@ public class PersianDatePickerView: UIView {
 
 
 //MARK: - PickerView DataSource
-extension PersianDatePickerView: UIPickerViewDataSource {
+extension GregorianDatePickerView: UIPickerViewDataSource {
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return style.numberOfComponents
     }
@@ -155,7 +155,7 @@ extension PersianDatePickerView: UIPickerViewDataSource {
 
 
 //MARK: - PickerView Delegate
-extension PersianDatePickerView: UIPickerViewDelegate {
+extension GregorianDatePickerView: UIPickerViewDelegate {
 	public func pickerView(_ pickerView: UIPickerView,
 						   viewForRow row: Int,
 						   forComponent component: Int,
@@ -164,7 +164,8 @@ extension PersianDatePickerView: UIPickerViewDelegate {
 		label.textAlignment = .center
 		label.textColor = fontColor
 		let format = NumberFormatter()
-		format.locale = Locale(identifier: "fa_IR")
+		
+		format.locale = Locale(identifier: "en")
 		
 		if let font = self.font {
 			label.font = font
@@ -214,8 +215,8 @@ extension PersianDatePickerView: UIPickerViewDelegate {
 	}
 }
 
-public typealias Listener = (_ year: Int, _ month: Int, _ day: Int) -> Void
-public enum PersianDatePickerStyle {
+public typealias GregorianListener = (_ year: Int, _ month: Int, _ day: Int) -> Void
+public enum GregorianDatePickerStyle {
 	case short
 	case long
 	

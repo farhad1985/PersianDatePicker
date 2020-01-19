@@ -10,21 +10,32 @@ import UIKit
 
 struct PersianDateDataSource {
 	//MARK: - Properties
-	private let cal: Calendar
+	private var cal: Calendar
 	var years: [Int]
 	var persianMonths: [String]
 	
-	init() {
-		cal = {
-			var c = Calendar(identifier: .persian)
-			c.locale = Locale(identifier: "fa_IR")
-			return c
-		}()
-		
-		years = Array(1300...1500)
-		persianMonths = cal.monthSymbols
+	init(isPersian:Bool) {
+		if isPersian
+		{
+				cal = {
+					var c = Calendar(identifier: .persian)
+					c.locale = Locale(identifier: "fa_IR")
+					return c
+				}()
+			years = Array(1300...1500)
+			persianMonths = cal.monthSymbols
+		}
+		else
+		{
+			cal = {
+				var c = Calendar(identifier: .gregorian)
+				c.locale = Locale(identifier: "en")
+				return c
+			}()
+			years = Array(1900...2030)
+			persianMonths = cal.monthSymbols
+		}
 	}
-	
 	
 	func daysRange(ofYear year:Int, month: Int) -> [Int] {
 		let targetDayComponents = DateComponents(calendar: cal,

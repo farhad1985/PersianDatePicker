@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		138645DC23D462060022D6E0 /* GregorianDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138645DB23D462060022D6E0 /* GregorianDatePickerView.swift */; };
 		16524A4F2169D79D00C1DD16 /* PersianDatePickerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16524A4E2169D79D00C1DD16 /* PersianDatePickerPresenter.swift */; };
 		16524A512169D99200C1DD16 /* PersianPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16524A502169D99200C1DD16 /* PersianPickerView.xib */; };
 		16524A532169DA5E00C1DD16 /* PersianPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16524A522169DA5E00C1DD16 /* PersianPickerView.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		138645DB23D462060022D6E0 /* GregorianDatePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GregorianDatePickerView.swift; sourceTree = "<group>"; };
 		16524A4E2169D79D00C1DD16 /* PersianDatePickerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersianDatePickerPresenter.swift; sourceTree = "<group>"; };
 		16524A502169D99200C1DD16 /* PersianPickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersianPickerView.xib; sourceTree = "<group>"; };
 		16524A522169DA5E00C1DD16 /* PersianPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersianPickerView.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				C47308E71EC05934004E9191 /* PersianDatePicker.h */,
 				C47308FF1EC05953004E9191 /* PersianDateDataSource.swift */,
 				C47309011EC05953004E9191 /* PersianDatePickerView.swift */,
+				138645DB23D462060022D6E0 /* GregorianDatePickerView.swift */,
 				16524A4E2169D79D00C1DD16 /* PersianDatePickerPresenter.swift */,
 				16524A502169D99200C1DD16 /* PersianPickerView.xib */,
 				167D2E88216A358F00A59D69 /* Shadowable.swift */,
@@ -179,12 +182,11 @@
 				};
 			};
 			buildConfigurationList = C47308DE1EC05934004E9191 /* Build configuration list for PBXProject "PersianDatePicker" */;
-			compatibilityVersion = "Xcode 11.0";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				English,
-				en,
 			);
 			mainGroup = C47308DA1EC05934004E9191;
 			productRefGroup = C47308E51EC05934004E9191 /* Products */;
@@ -225,6 +227,7 @@
 				167D2E86216A354500A59D69 /* CustomView.swift in Sources */,
 				C47309051EC05953004E9191 /* PersianDatePickerView.swift in Sources */,
 				16524A532169DA5E00C1DD16 /* PersianPickerView.swift in Sources */,
+				138645DC23D462060022D6E0 /* GregorianDatePickerView.swift in Sources */,
 				16524A4F2169D79D00C1DD16 /* PersianDatePickerPresenter.swift in Sources */,
 				C47309031EC05953004E9191 /* PersianDateDataSource.swift in Sources */,
 			);
@@ -357,6 +360,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = MG2239MQJF;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -373,7 +377,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ir.shatel.PersianDatePicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -381,6 +385,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = MG2239MQJF;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -397,7 +402,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ir.shatel.PersianDatePicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -414,7 +419,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ir.shatel.PersianDatePickerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -431,7 +436,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ir.shatel.PersianDatePickerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

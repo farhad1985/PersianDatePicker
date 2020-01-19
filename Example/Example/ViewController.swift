@@ -17,13 +17,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         persianDatePickerView.style = .short
-        //persianDatePickerView.setMaxYear(toYear : 1400)
-        persianDatePickerView.setYearsRange(fromYear : 1390 , toYear : 1400)
+        persianDatePickerView.setYearsRange(fromYear : 1300 , toYear : 2050)
         persianDatePickerView.onChange = {(year, month, day) in
             print("\(year)/\(month)/\(day)")
-//            print("gregorian Date : \(self.persianDatePickerView.getGregorianDate()!)")
             print("persian Date : \(self.persianDatePickerView.getPersianDate())")
-            print(" date = > \(self.persianDatePickerView.getGregorianDate())")
+			print(" date = > \(self.persianDatePickerView.getGregorianDate())")
         }
         
     }
