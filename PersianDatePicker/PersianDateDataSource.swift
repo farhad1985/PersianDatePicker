@@ -26,7 +26,7 @@ struct PersianDateDataSource {
 	}
 	
 	
-	func daysRange(ofYear year:Int, month: Int) -> [Int] {
+	func daysRange(ofYear year: Int, month: Int) -> [Int] {
 		let targetDayComponents = DateComponents(calendar: cal,
                                                  year: year,
 												 month: month,
@@ -40,7 +40,16 @@ struct PersianDateDataSource {
 	func todayCompononents() -> (year: Int, month: Int, day: Int) {
 		let date = Date()
 		let comps = cal.dateComponents([.year, .month, .day], from: date)
-		return (year: comps.year!, month: comps.month!, day: comps.day!)
+        
+        guard
+            let year = comps.year,
+            let month = comps.month,
+            let day = comps.day
+            else { return (year: 0, month: 0, day: 0) }
+        
+		return (year: year,
+                month: month,
+                day: day)
 	}
     
     func myDateCompononents(date: Date) -> (year: Int, month: Int, day: Int) {

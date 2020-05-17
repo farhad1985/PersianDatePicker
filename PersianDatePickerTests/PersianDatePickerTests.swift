@@ -11,26 +11,31 @@ import XCTest
 
 class PersianDatePickerTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    let datasource = PersianDateDataSource()
+    
+    func testDaysRangeWith31Days() {
+        let rang = datasource.daysRange(ofYear: 1399, month: 1)
+        XCTAssertTrue(rang.count == 31)
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func testDaysRangeWith30Days() {
+        let rang = datasource.daysRange(ofYear: 1399, month: 7)
+        XCTAssertTrue(rang.count == 30)
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testGregorianDate() {
+        guard
+            let gDate = datasource.convertToGregorian(year: 1399,
+                                                      month: 2,
+                                                      day: 28)
+            else {
+                XCTFail()
+                return
         }
+        
+        let dateFormater = DateFormatter()
+        dateFormater.dateFormat  = "yyyy-MM-dd"
+        let d = dateFormater.string(from: gDate)
+        XCTAssertTrue(d == "2020-05-17")
     }
-    
 }

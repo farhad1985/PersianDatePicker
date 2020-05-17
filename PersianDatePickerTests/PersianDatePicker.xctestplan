@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "9B5524D9-0815-4210-B9ED-4777A47E0B3B",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:PersianDatePicker.xcodeproj",
+      "identifier" : "C47308E31EC05934004E9191",
+      "name" : "PersianDatePicker"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:PersianDatePicker.xcodeproj",
+        "identifier" : "C47308EC1EC05934004E9191",
+        "name" : "PersianDatePickerTests"
+      }
+    }
+  ],
+  "version" : 1
+}

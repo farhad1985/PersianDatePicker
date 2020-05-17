@@ -109,7 +109,7 @@ public class PersianDatePickerView: UIView {
     }
     
     private func setDatePicker(year: Int, month: Int, day: Int) {
-        let yearIndex = persianDateDataSource.years.index(of: year)!
+        let yearIndex = persianDateDataSource.years.firstIndex(of: year)!
         let monthIndex = month - 1
         self.year = year
         self.month = month

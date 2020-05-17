@@ -13,6 +13,7 @@
 		167D2E86216A354500A59D69 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167D2E84216A354500A59D69 /* CustomView.swift */; };
 		167D2E87216A354500A59D69 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167D2E85216A354500A59D69 /* ShadowView.swift */; };
 		167D2E89216A358F00A59D69 /* Shadowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167D2E88216A358F00A59D69 /* Shadowable.swift */; };
+		16D088D42471483500FB107C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 16D088D32471483500FB107C /* Info.plist */; };
 		C47308EE1EC05934004E9191 /* PersianDatePicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C47308E41EC05934004E9191 /* PersianDatePicker.framework */; };
 		C47308F31EC05934004E9191 /* PersianDatePickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47308F21EC05934004E9191 /* PersianDatePickerTests.swift */; };
 		C47308F51EC05934004E9191 /* PersianDatePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = C47308E71EC05934004E9191 /* PersianDatePicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -38,6 +39,8 @@
 		167D2E85216A354500A59D69 /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		167D2E88216A358F00A59D69 /* Shadowable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadowable.swift; sourceTree = "<group>"; };
 		16CACE0B219C47BD008BEC92 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16D088D32471483500FB107C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16D088D5247148BA00FB107C /* PersianDatePicker.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = PersianDatePicker.xctestplan; sourceTree = "<group>"; };
 		C47308E41EC05934004E9191 /* PersianDatePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PersianDatePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C47308E71EC05934004E9191 /* PersianDatePicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersianDatePicker.h; sourceTree = "<group>"; };
 		C47308ED1EC05934004E9191 /* PersianDatePickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PersianDatePickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				C47308F21EC05934004E9191 /* PersianDatePickerTests.swift */,
+				16D088D32471483500FB107C /* Info.plist */,
+				16D088D5247148BA00FB107C /* PersianDatePicker.xctestplan */,
 			);
 			path = PersianDatePickerTests;
 			sourceTree = "<group>";
@@ -165,7 +170,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = Farhad;
 				TargetAttributes = {
 					C47308E31EC05934004E9191 = {
@@ -182,10 +187,11 @@
 			};
 			buildConfigurationList = C47308DE1EC05934004E9191 /* Build configuration list for PBXProject "PersianDatePicker" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = C47308DA1EC05934004E9191;
 			productRefGroup = C47308E51EC05934004E9191 /* Products */;
@@ -211,6 +217,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16D088D42471483500FB107C /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,21 +261,30 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -309,21 +325,30 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -369,7 +394,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ir.shatel.PersianDatePicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -389,7 +414,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ir.shatel.PersianDatePicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -402,7 +427,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ir.shatel.PersianDatePickerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -415,7 +440,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ir.shatel.PersianDatePickerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

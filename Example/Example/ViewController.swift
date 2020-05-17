@@ -22,8 +22,8 @@ class ViewController: UIViewController {
         persianDatePickerView.onChange = {(year, month, day) in
             print("\(year)/\(month)/\(day)")
 //            print("gregorian Date : \(self.persianDatePickerView.getGregorianDate()!)")
-            print("persian Date : \(self.persianDatePickerView.getPersianDate())")
-            print(" date = > \(self.persianDatePickerView.getGregorianDate())")
+            print("persian Date : \(String(describing: self.persianDatePickerView.getPersianDate()))")
+            print(" date = > \(String(describing: self.persianDatePickerView.getGregorianDate()))")
         }
         
     }
