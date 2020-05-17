@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'PersianDatePicker'
-  s.version          = '1.0.0'
+  s.version          = '1.1.0'
   s.summary          = 'PersianDatePicker is a PickerView. by : farhad faramarzi'
 
 
@@ -12,6 +12,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.0'
   s.source_files = 'PersianDatePicker/*'
   s.exclude_files = "PersianDatePicker/**/*.plist"
-  s.swift_version = '4.2'
+  s.swift_version = '5.0'
 
 end
