@@ -12,5 +12,6 @@ Pod::Spec.new do |s|
   s.platform = :ios, "11.0"
   s.source_files = 'PersianDatePicker/*'
   s.exclude_files = "PersianDatePicker/**/*.plist"
+  s.swift_version = '5'
 
 end
